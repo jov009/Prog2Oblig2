@@ -27,7 +27,7 @@ public class TwoWayLinkedListTest {
     }
 
     @Test
-    public void ContainsMiddleTest() {
+    public void ContainsInMiddleTest() {
         assertThat(listen.contains(33.1), is(equalTo(true)));
     }
 
@@ -85,7 +85,6 @@ public class TwoWayLinkedListTest {
     public void SetValueTest() {
         assertThat(listen.set(2, 7.9), is(equalTo(14.7)));
     }
-
 
     @Test
     public void SetValue2Test() {
