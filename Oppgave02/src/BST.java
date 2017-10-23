@@ -247,7 +247,7 @@ public class BST<E extends Comparable<E>> extends AbstractTree<E> {
 
     private class PreorderIterator implements java.util.Iterator<E> {
 
-        private ArrayList<E> list = new ArrayList<>();
+        private TwoWayLinkedList<E> list = new TwoWayLinkedList<>();
         private int current = 0;
 
         public PreorderIterator() {
