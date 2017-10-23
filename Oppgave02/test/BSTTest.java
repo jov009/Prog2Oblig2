@@ -42,7 +42,6 @@ public class BSTTest {
         assertThat(tree.delete(2), is(equalTo(true)));
     }
 
-
     @Test
     public void DeleteSecond(){
         assertThat(tree.delete(56), is(equalTo(true)));

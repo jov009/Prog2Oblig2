@@ -33,9 +33,14 @@ public class TwoWayLinkedList<E> extends AbstractSequentialList<E> {
 
     public void addFirst(E e){
         Node<E> newNode = new Node<>(e);
-        newNode.next = head;
-        head.previous = newNode;
-        head = newNode;
+        if (head == null){
+            head = newNode;
+        } else {
+            newNode.next = head;
+            head.previous = newNode;
+            head = newNode;
+        }
+
         size++;
 
         if (tail == null){
