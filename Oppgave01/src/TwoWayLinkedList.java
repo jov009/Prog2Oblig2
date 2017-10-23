@@ -10,6 +10,12 @@ public class TwoWayLinkedList<E> extends AbstractSequentialList<E> {
 
     }
 
+    public TwoWayLinkedList(E[] list) {
+        for (int i = 0; i < list.length; i++) {
+            add(list[i]);
+        }
+    }
+
     @Override
     public int size() {
         return size;
@@ -57,7 +63,7 @@ public class TwoWayLinkedList<E> extends AbstractSequentialList<E> {
         } else {
             tail.next = newNode;
             newNode.previous = tail;
-            tail = tail.next;
+            tail = newNode;
         }
 
         size++;

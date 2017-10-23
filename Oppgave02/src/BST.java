@@ -242,27 +242,27 @@ public class BST<E extends Comparable<E>> extends AbstractTree<E> {
 
     @Override
     public java.util.Iterator<E> iterator() {
-        return new InorderIterator();
+        return new PreorderIterator();
     }
 
-    private class InorderIterator implements java.util.Iterator<E> {
+    private class PreorderIterator implements java.util.Iterator<E> {
 
         private ArrayList<E> list = new ArrayList<>();
         private int current = 0;
 
-        public InorderIterator() {
-            inorder();
+        public PreorderIterator() {
+            preorder();
         }
 
-        private void inorder() {
-            inorder(root);
+        private void preorder() {
+            preorder(root);
         }
 
-        private void inorder(TreeNode<E> root) {
+        private void preorder(TreeNode<E> root) {
             if (root == null)return;
-            inorder(root.left);
             list.add(root.element);
-            inorder(root.right);
+            preorder(root.left);
+            preorder(root.right);
         }
 
         @Override
