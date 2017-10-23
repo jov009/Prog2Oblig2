@@ -267,15 +267,16 @@ public class BST<E extends Comparable<E>> extends AbstractTree<E> {
 
         @Override
         public boolean hasNext() {
-            if (current < list.size())
-                return true;
+            return current < list.size();
 
-            return false;
         }
 
         @Override
         public E next() {
-            return list.get(current++);
+            if (hasNext()){
+                return list.get(current++);
+            }
+            return null;
         }
 
         @Override
